@@ -1,0 +1,40 @@
+@mixin transition($property) {
+	transition: $property $time $function-animation;
+}
+
+.socpublic {
+	@extend %flex-block;
+	justify-content: center;
+
+	&__item + &__item {
+		margin-left: 10px;
+	}
+	
+	&__link {
+		@extend %flex-block;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		
+		color: $color-icon;
+		@include transition(color);
+		@include transition(background-color);
+	}
+	
+	&__link:hover,
+	&__link:focus {
+		background-color: $accent-color;
+		color: $title-text-color;
+	}
+	
+	&__icon {
+		fill: currentColor;
+	}
+
+	&__link--grey {
+		color: $title-text-color;
+		background-color: rgba(255, 255, 255, 0.1);
+		}
+	
+}

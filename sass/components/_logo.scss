@@ -1,0 +1,15 @@
+.logo {
+	padding-top: 24px;
+	padding-bottom: 25px;
+
+	color: $primary-text-color;
+
+	font-family: $font-family-secondary;
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 1.19;
+
+	&__title {
+		color: $accent-color;
+	}
+}

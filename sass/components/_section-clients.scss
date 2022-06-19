@@ -1,0 +1,41 @@
+@mixin transition($property) {
+	transition: $property $time $function-animation;
+}
+
+.clients {
+	padding-top: 94px;
+	padding-bottom: 94px;
+
+	&__list {
+		display: flex;
+	}
+	
+	&__item + &__item {
+		margin-left: 30px;
+	}
+}
+
+.company-logo {
+	@extend %flex-block;
+	justify-content: center;
+	width: 170px;
+	height: 92px;
+	border: 1px solid $color-icon;
+	border-radius: 4px;
+
+	color: $color-icon;
+	@include transition(color);
+	@include transition(border);
+
+	&:hover, 
+	&:focus {
+	color: $accent-color;
+	border: 1px solid $accent-color;
+	}
+
+	&__icon {
+	fill: currentColor;
+	}
+}
+
+

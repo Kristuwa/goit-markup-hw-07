@@ -1,0 +1,40 @@
+.benefits {
+	padding-top: 94px;
+	padding-bottom: 94px;
+
+	&__list {
+		display: flex;
+	}
+	
+	&__item {
+		flex-basis: calc((100% - 90px) / 4);
+	}
+	
+	&__item + &__item{
+		margin-left: 30px;
+	}
+}
+
+.card {
+	height: 120px;
+	padding: 25px 100px;
+	margin-bottom: 30px;
+
+	background-color: $section-background;
+
+	&__title {
+		margin-bottom: 10px;
+		
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1.14;
+		text-transform: uppercase;
+	}
+	
+	&__description {
+		color: $secondary-text-color;
+	
+		font-weight: 400;
+		line-height: 1.71;
+	}
+}

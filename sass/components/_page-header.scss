@@ -1,0 +1,106 @@
+@mixin transition($property) {
+	transition: $property $time $function-animation;
+}
+
+header {
+	border-bottom: 1px solid $border-bottom-color;
+}
+
+.header {
+	display: flex;
+
+	&__nav {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	&__info {
+		display: flex;
+	}
+}
+
+.site-nav {
+	display: flex;
+	margin-left: 93px;
+}
+
+.site-nav__item + .site-nav__item {
+	margin-left: 50px;
+}
+
+.site-nav__link {
+	display: block;
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	color: $primary-text-color;
+
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	line-height: 1.14;
+
+	@include transition(color);
+
+	&:hover,
+	&:focus {
+			color: $accent-color;
+		}
+}
+
+.site-nav__link--active {
+	color: $accent-color;
+	position: relative;
+}
+
+.site-nav__link--active::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 4px;
+	border-radius: 2px;
+
+	background-color: $accent-color;
+
+}
+
+.header .info__link {
+	@extend %flex-block;
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+.header__info {
+	margin-left: auto;
+}
+
+.info__link {
+	color: $secondary-text-color;
+
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	line-height: 1.14;
+
+	@include transition(color);
+
+	&:hover,
+	&:focus {
+	color: $accent-color;
+	}
+}
+
+.info__email-icon{
+	fill: currentColor;
+	margin-right: 10px;
+}
+
+.info__tel-icon{
+	fill: currentColor;
+	margin-right: 10px;
+}
+
+.info__item + .info__item {
+	margin-left: 50px;
+}
