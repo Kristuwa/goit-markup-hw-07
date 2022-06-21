@@ -1,7 +1,3 @@
-@mixin transition($property) {
-	transition: $property $time $function-animation;
-}
-
 .socpublic {
 	@extend %flex-block;
 	justify-content: center;
@@ -18,8 +14,7 @@
 		border-radius: 50%;
 		
 		color: $color-icon;
-		@include transition(color);
-		@include transition(background-color);
+		transition: color $time $function-animation, background-color $time $function-animation;
 	}
 	
 	&__link:hover,
@@ -36,5 +31,4 @@
 		color: $title-text-color;
 		background-color: rgba(255, 255, 255, 0.1);
 		}
-	
 }

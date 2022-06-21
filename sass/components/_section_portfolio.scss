@@ -1,7 +1,3 @@
-@mixin transition($property) {
-	transition: $property $time $function-animation;
-}
-
 .button-section {
 	padding-top: 94px;
 	padding-bottom: 94px;
@@ -30,10 +26,8 @@
 		line-height: 1.63;
 		letter-spacing: 0.03em;
 		text-align: center;
-	
-		@include transition(color);
-		@include transition(background-color);
-		@include transition(box-shadow);
+
+		transition: color $time $function-animation, background-color $function-animation, box-shadow $time $function-animation;
 		}
 	
 	&__button:hover,
@@ -72,7 +66,7 @@
 	display: block;
 	position: relative;
 
-	@include transition(box-shadow);
+	transition: box-shadow $time $function-animation;
 
 	&__container {
 		position: relative;
@@ -118,15 +112,13 @@
 	background: rgba(33, 150, 243, 0.9);
 
 	opacity: 0;
-	transform: translate(0, 100%);
+	transform: translateY(100%);
 
-	@include transition(transform);
-	@include transition(opacity);
+	transition: transform $time $function-animation, opacity $time $function-animation;
 	}
 
 .project-card:hover .project-card__text,
 .project-card:focus .project-card__text {
-	transform: translate(0, 0);
+	transform: translateY(0);
 	opacity: 1;
 }
-

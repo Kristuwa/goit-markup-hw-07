@@ -1,7 +1,3 @@
-@mixin transition($property) {
-	transition: $property $time $function-animation;
-}
-
 .clients {
 	padding-top: 94px;
 	padding-bottom: 94px;
@@ -24,8 +20,7 @@
 	border-radius: 4px;
 
 	color: $color-icon;
-	@include transition(color);
-	@include transition(border);
+	transition: color $time $function-animation, border $time $function-animation;
 
 	&:hover, 
 	&:focus {
@@ -37,5 +32,3 @@
 	fill: currentColor;
 	}
 }
-
-
